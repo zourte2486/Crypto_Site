@@ -1,0 +1,17 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app{
+  min-height: 100vh;
+  color: aliceblue;
+  background: linear-gradient(to right, #0c1a35, #243b55);
+}
