@@ -56,8 +56,8 @@
 }
 
 .navbar button:hover {
-    background: #09005c;
-    color: #fff;
+    transform: scale(1.03);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
 
