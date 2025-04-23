@@ -35,7 +35,7 @@
 }
 
 .hero form input {
-    flex:1;
+    flex: 1;
     padding-left: 10px;
     outline: none;
     border: none;
@@ -51,4 +51,19 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+}
+
+.crypto-table {
+    max-width: 800px;
+    margin: auto;
+    background: linear-gradient(#5403ff26, #69029926);
+    border-radius: 15px;
+}
+
+.table-layout {
+    display: grid;
+    grid-template-columns: .5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #3c3c3c;
 }
