@@ -1,6 +1,5 @@
-import { createContext, useEffect,useState } from "react";
-
-export const CoinContext = createContext();
+import { useEffect, useState } from "react";
+import { CoinContext } from "./CoinContextDefinition";
 
 const CoinContextProvider = (props) => {
   const [allCoins, setAllCoin] = useState([]);
@@ -29,7 +28,7 @@ const CoinContextProvider = (props) => {
     fetchAllCoins();
   }, [currency]);
 
-  const contextvalue = {
+  const contextValue = {
     allCoins,
     currency,
     setCurrency,
