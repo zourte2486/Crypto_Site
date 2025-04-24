@@ -67,3 +67,18 @@
     align-items: center;
     border-bottom: 1px solid #3c3c3c;
 }
+
+.table-layout:last-child {
+    border-bottom: none;
+}
+
+.table-layout div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-layout img {
+    width: 30px;
+}
+

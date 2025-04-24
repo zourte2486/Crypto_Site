@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { CoinContext } from "./CoinContextDefinition";
+import { createContext, useEffect, useState } from "react";
+
+export const CoinContext = createContext();
 
 const CoinContextProvider = (props) => {
   const [allCoins, setAllCoin] = useState([]);
@@ -7,12 +8,13 @@ const CoinContextProvider = (props) => {
     name: "USD",
     symbol: "$",
   });
+
   const fetchAllCoins = async () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "CG-Rwux4WAqZ1UJghbvW9iTG9Sd	",
+        "x-cg-demo-api-key": "CG-Rwux4WAqZ1UJghbvW9iTG9Sd",
       },
     };
 
@@ -24,6 +26,7 @@ const CoinContextProvider = (props) => {
       .then((res) => setAllCoin(res))
       .catch((err) => console.error(err));
   };
+
   useEffect(() => {
     fetchAllCoins();
   }, [currency]);

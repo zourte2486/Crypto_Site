@@ -1,25 +1,21 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Home.css";
-import { useEffect, useState, useContext } from "react";
 import { CoinContext } from "../../Context/CoinContext";
 
 function Home() {
-  const { allCoin, currency } = useContext(CoinContext);
+  const { allCoins, currency } = useContext(CoinContext);
   const [displayCoin, setDisplayCoin] = useState([]);
 
   useEffect(() => {
-    setDisplayCoin(allCoin);
-  }, [allCoin]);
-  
-
+    setDisplayCoin(allCoins);
+  }, [allCoins]);
 
   return (
     <div className="home">
       <div className="hero">
         <h1>
-          {" "}
           A9wed <br />
-          Crypto Marketplace{" "}
+          Crypto Marketplace
         </h1>
         <p>
           Welcome to the world's A9wed cryptocurrency marketplace. <br />
@@ -29,6 +25,7 @@ function Home() {
           <input type="text" placeholder="Search crypto.." />
           <button type="submit">Search</button>
         </form>
+
         <div className="crypto-table">
           <div className="table-layout">
             <p>#</p>
@@ -37,17 +34,23 @@ function Home() {
             <p style={{ textAlign: "center" }}>24H Change</p>
             <p style={{ textAlign: "right" }}>Market Cap</p>
           </div>
-          {displayCoin.map((coin, index) => {
-            return (
-              <div className="table-layout" key={index}>
-                <p>{index + 1}</p>
-                <p>{coin.name}</p>
-                <p>{currency.symbol + coin.current_price}</p>
-                <p style={{ textAlign: "center" }}>{coin.price_change_percentage_24h}%</p>
-                <p style={{ textAlign: "right" }}>{currency.symbol + coin.market_cap}</p>
+
+          {(displayCoin || []).slice(0, 10).map((coin, index) => (
+            <div className="table-layout" key={index}>
+              <p>{coin.market_cap_rank}</p>
+              <div className="coin-logo">
+                <img src={coin.image} alt={coin.name} />
+                <span>{coin.name + " - "+ coin.symbol}</span>
               </div>
-            );
-          })}
+              <p>{currency.symbol}{coin.current_price.toLocaleString()}</p>
+              <p style={{ textAlign: "center", color: coin.price_change_percentage_24h >= 0 ? "green" : "red" }}>
+                {coin.price_change_percentage_24h.toFixed(2)}%
+              </p>
+              <p style={{ textAlign: "right" }}>
+                {currency.symbol}{coin.market_cap.toLocaleString()}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
