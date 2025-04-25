@@ -89,3 +89,43 @@
 .hover-underline:hover::before {
     transform: scaleX(1);
 }
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 8%;
+    }
+
+    .navbar button {
+        padding: 8px 18px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .nav-right select {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    /* .nav-right select {
+        padding: 5px 8px;
+        font-size: 12px;
+    } */
+    .navbar button img {
+        width: 12px;
+    }
+}

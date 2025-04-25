@@ -1,0 +1,36 @@
+.footer-content {
+    border: 1px solid #989898;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.social-media-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media-links li {
+    display: inline;
+}
+
+.social-media-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+    color: #00bcd4;
+}
