@@ -59,6 +59,9 @@
     background: linear-gradient(#5403ff26, #69029926);
     border-radius: 15px;
 }
+.market-cap {
+   text-align: right;
+}
 
 .table-layout {
     display: grid;
@@ -82,3 +85,16 @@
     width: 30px;
 }
 
+/* Responsive Styles */
+
+
+@media (max-width: 768px) {
+    .table-layout {
+        grid-template-columns: 0.5fr 2fr 1fr 1fr ;
+
+    }
+    .market-cap{
+        display: none;
+    }
+    
+}

@@ -32,7 +32,7 @@ function Home() {
             <p>Coins</p>
             <p>Price</p>
             <p style={{ textAlign: "center" }}>24H Change</p>
-            <p style={{ textAlign: "right" }}>Market Cap</p>
+            <p className="market-cap">Market Cap</p>
           </div>
 
           {(displayCoin || []).slice(0, 10).map((coin, index) => (
@@ -46,7 +46,7 @@ function Home() {
               <p style={{ textAlign: "center", color: coin.price_change_percentage_24h >= 0 ? "green" : "red" }}>
                 {coin.price_change_percentage_24h.toFixed(2)}%
               </p>
-              <p style={{ textAlign: "right" }}>
+              <p className="market-cap">
                 {currency.symbol}{coin.market_cap.toLocaleString()}
               </p>
             </div>
