@@ -3,7 +3,7 @@
 }
 
 .hero {
-    max-width: 600px;
+    max-width: 1000px; /* Make hero wider */
     margin: 80px auto;
     display: flex;
     flex-direction: column;
@@ -53,22 +53,28 @@
     font-size: 18px;
 }
 
+/* ===== Crypto Table Styling ===== */
+
 .crypto-table {
-    max-width: 800px;
-    margin: auto;
+    width: 90%; /* make table 90% of page */
+    margin: 50px auto 0;
     background: linear-gradient(#5403ff26, #69029926);
     border-radius: 15px;
+    overflow: hidden; /* for clean rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
+
 .market-cap {
-   text-align: right;
+    text-align: right;
 }
 
 .table-layout {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
-    padding: 15px 20px;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr 0.7fr;
+    padding: 20px;
     align-items: center;
     border-bottom: 1px solid #3c3c3c;
+    font-size: 18px;
 }
 
 .table-layout:last-child {
@@ -82,19 +88,26 @@
 }
 
 .table-layout img {
-    width: 30px;
+    width: 35px;
+}
+
+/* Favorite button style */
+.table-layout button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
 }
 
 /* Responsive Styles */
-
-
 @media (max-width: 768px) {
     .table-layout {
-        grid-template-columns: 0.5fr 2fr 1fr 1fr ;
-
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+        font-size: 16px;
     }
-    .market-cap{
+
+    .market-cap {
         display: none;
     }
-    
 }

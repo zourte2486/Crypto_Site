@@ -4,7 +4,8 @@ import logo from "../../assets/logo.png";
 import { CoinContext } from "../../Context/CoinContext";
 import { useNavigate } from "react-router-dom";
 import supabase from "../../supabaseClient";
-import avatarIcon from "../../assets/avatar.png"; // make sure to add an avatar icon in assets
+import avatarIcon from "../../assets/avatar.png";
+import Favorites from "../Favorites";
 
 const Navbar = () => {
   const { setCurrency } = useContext(CoinContext);
@@ -50,8 +51,8 @@ const Navbar = () => {
         onClick={() => navigate("/")}
       />
       <ul>
-        <li className="hover-underline">Home</li>
-        <li className="hover-underline">Features</li>
+        <li className="hover-underline" onClick={() => navigate('/')}>Home</li>
+        <li className="hover-underline" >Features</li>
         <li className="hover-underline">Pricing</li>
         <li className="hover-underline">Blog</li>
       </ul>
@@ -81,7 +82,7 @@ const Navbar = () => {
             />
             {dropdownOpen && (
               <div className="dropdown">
-                <p onClick={() => navigate("/favorites")}>⭐ Favorites</p>
+                <p onClick={() => navigate('/favorites')}>⭐ Favorites</p>
                 <p onClick={() => alert("Settings coming soon!")}>⚙ Settings</p>
                 <p onClick={handleLogout}>🚪 Logout</p>
               </div>

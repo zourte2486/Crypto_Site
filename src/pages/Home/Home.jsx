@@ -8,6 +8,22 @@ function Home() {
   const [displayCoin, setDisplayCoin] = useState([]);
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
+  const [input, setInput] = useState('');
+
+  const inputHandler = (event) => {
+    setInput(event.target.value);
+    if (event.target.value === '') {
+      setDisplayCoin(allCoins);
+    }
+  }
+  const searchHandler = async (event) => {
+      event.preventDefault();
+      const coins = await allCoins.filter((coin) => {
+        return coin.name.toLowerCase().includes(input.toLowerCase());
+      })
+      
+      setDisplayCoin(coins);
+  }
 
   useEffect(() => {
     setDisplayCoin(allCoins);
@@ -61,19 +77,19 @@ function Home() {
           Welcome to the world's A9wed cryptocurrency marketplace. <br />
           Sign up to explore more about cryptos.
         </p>
-        <form>
-          <input type="text" placeholder="Search crypto.." />
+        <form onSubmit={searchHandler}>
+          <input onChange={inputHandler}  value={input} type="text" placeholder="Search crypto.." required/>
           <button type="submit">Search</button>
         </form>
 
         <div className="crypto-table">
           <div className="table-layout">
-            <p>#</p>
+            <p>Rt</p>
             <p>Coins</p>
             <p>Price</p>
             <p style={{ textAlign: "center" }}>24H Change</p>
             <p className="market-cap">Market Cap</p>
-            <p>Fav</p>
+            <p>Favorites</p>
           </div>
 
           {(displayCoin || []).slice(0, 10).map((coin, index) => (
