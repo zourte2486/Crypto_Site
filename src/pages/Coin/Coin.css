@@ -1,22 +1,109 @@
-.spinner {
-    display: grid;
-    place-self: center;
-    min-height: 80vh;
-}
-
-.spin {
+.coin {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    min-height: 100vh;
+  }
+  
+  .coin-name {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 28px;
+  }
+  
+  .coin-name img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .coin-chart {
+    width: 100%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .coin-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .coin-info ul {
+    list-style: none;
+    background: transparent;
+    padding: 20px 30px;
+    border-radius: 12px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    color: #000000;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  }
+  
+  .coin-info ul:hover {
+    background: linear-gradient(to left, #201854, #085d5d);
+    transform: translateY(-5px);
+  }
+  
+  .coin-info ul li:first-child {
+    font-weight: 600;
+    color: #aaa;
+    font-size: 16px;
+  }
+  
+  .coin-info ul li:last-child {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    word-break: break-word;
+  }
+  
+  .coin-info a {
+    color: #4fc3f7;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .coin-info a:hover {
+    color: #03a9f4;
+  }
+  
+  /* Spinner (optional) */
+  .spinner {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .spin {
     width: 50px;
     height: 50px;
-    place-self: center;
+    border: 6px solid #eee;
+    border-top: 6px solid #4fc3f7;
     border-radius: 50%;
-    border: 5px solid #ccc;
-    border-top-color: #3498db;
-    animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
     100% {
-        transform: rotate(360deg);
+      transform: rotate(360deg);
     }
-}
+  }
+  

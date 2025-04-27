@@ -70,8 +70,52 @@ const Coin = () => {
             <li>{coinData.market_cap_rank}</li>
           </ul>
           <ul>
-          <li>Crypto Price</li>
-          <li>{currency.symbol} {coinData.market_cap_rank}</li>
+            <li>Crypto Price</li>
+            <li>
+              {currency.symbol}{" "}
+              {coinData.market_data?.current_price[
+                currency.name.toLowerCase()
+              ]?.toLocaleString() ?? "N/A"}
+            </li>
+          </ul>
+          <ul>
+            <li>Market cap</li>
+            <li>
+              {currency.symbol}{" "}
+              {coinData.market_data?.market_cap[
+                currency.name.toLowerCase()
+              ]?.toLocaleString() ?? "N/A"}
+            </li>
+          </ul>
+          <ul>
+            <li>24h High</li>
+            <li>
+              {currency.symbol}{" "}
+              {coinData.market_data?.high_24h[
+                currency.name.toLowerCase()
+              ]?.toLocaleString() ?? "N/A"}
+            </li>
+          </ul>
+          <ul>
+            <li>24h Low</li>
+            <li>
+              {currency.symbol}{" "}
+              {coinData.market_data?.low_24h[
+                currency.name.toLowerCase()
+              ]?.toLocaleString() ?? "N/A"}
+            </li>
+          </ul>
+          <ul>
+            <li>Homepage</li>
+            <li>
+              <a
+                href={coinData.links.homepage[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {coinData.links.homepage[0]}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
