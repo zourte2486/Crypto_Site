@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import "./Home.css";
 import { CoinContext } from "../../Context/CoinContext";
 import supabase from "../../supabaseClient"; // make sure this path is correct
+import { Link } from "react-router-dom";
+
 
 function Home() {
   const { allCoins, currency } = useContext(CoinContext);
@@ -106,7 +108,7 @@ function Home() {
           </div>
 
           {(displayCoin || []).slice(0, 10).map((coin, index) => (
-            <div className="table-layout" key={index}>
+            <Link to={`/coin/${coin.id}`} className="table-layout" key={index}>
               <p>{coin.market_cap_rank}</p>
               <div className="coin-logo">
                 <img src={coin.image} alt={coin.name} />
@@ -134,7 +136,7 @@ function Home() {
                   {isFavorite(coin.id) ? "★" : "☆"}
                 </button>
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
