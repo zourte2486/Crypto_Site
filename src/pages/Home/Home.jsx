@@ -72,7 +72,7 @@ function Home() {
     <div className="home">
       <div className="hero">
         <h1>
-          A9wed <br />
+          NovaChain <br />
           Crypto Marketplace
         </h1>
         <p>
