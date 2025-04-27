@@ -8,22 +8,22 @@ function Home() {
   const [displayCoin, setDisplayCoin] = useState([]);
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const inputHandler = (event) => {
     setInput(event.target.value);
-    if (event.target.value === '') {
+    if (event.target.value === "") {
       setDisplayCoin(allCoins);
     }
-  }
+  };
   const searchHandler = async (event) => {
-      event.preventDefault();
-      const coins = await allCoins.filter((coin) => {
-        return coin.name.toLowerCase().includes(input.toLowerCase());
-      })
-      
-      setDisplayCoin(coins);
-  }
+    event.preventDefault();
+    const coins = await allCoins.filter((coin) => {
+      return coin.name.toLowerCase().includes(input.toLowerCase());
+    });
+
+    setDisplayCoin(coins);
+  };
 
   useEffect(() => {
     setDisplayCoin(allCoins);
@@ -78,7 +78,20 @@ function Home() {
           Sign up to explore more about cryptos.
         </p>
         <form onSubmit={searchHandler}>
-          <input onChange={inputHandler}  value={input} type="text" placeholder="Search crypto.." required/>
+          <input
+            onChange={inputHandler}
+            value={input}
+            list="coinlist"
+            type="text"
+            placeholder="Search crypto.."
+            required
+          />
+          <datalist id="coinlist">
+            {(allCoins || []).map((coin, index) => (
+              <option key={index} value={coin.name} />
+            ))}
+          </datalist>
+
           <button type="submit">Search</button>
         </form>
 
