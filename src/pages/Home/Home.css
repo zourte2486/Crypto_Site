@@ -70,7 +70,7 @@
 
 .table-layout {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr 0.7fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr 0.5fr;
     padding: 20px;
     align-items: center;
     border-bottom: 1px solid #3c3c3c;
@@ -98,6 +98,20 @@
     font-size: 24px;
     cursor: pointer;
     color: #fff;
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: gold;
+    padding: 0;
+    margin: 0;
+}
+
+.favorite-button:hover {
+    color: orange;
 }
 
 /* Responsive Styles */
